@@ -195,7 +195,7 @@ public class NCAA2017 {
         }
         
         
-        for (int i = 0; i < 1000; ++i) {
+        for (int i = 0; i < 100000; ++i) {
             for (Game game : games) {
 
                 Team t1 = teamMap.get(game.t1);
