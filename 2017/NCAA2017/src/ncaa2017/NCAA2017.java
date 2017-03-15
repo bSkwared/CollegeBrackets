@@ -125,14 +125,15 @@ public class NCAA2017 {
             
             Team t1 = teamMap.get(game.t1);
             Team t2 = teamMap.get(game.t2);
+            if (!final68.contains(t1.name) || !final68.contains(t2.name)) continue;
             
             int t1D =  game.diff;
             int t2D = -game.diff;
             
             double t1Rate, t2Rate;
             
-            t1Rate = t1D + t2.ptDiff;
-            t2Rate = t2D + t1.ptDiff;
+            t1Rate = t1D;
+            t2Rate = t2D;
             
             
             t1.totRate += t1Rate;
@@ -155,15 +156,15 @@ public class NCAA2017 {
 
             Team t1 = teamMap.get(game.t1);
             Team t2 = teamMap.get(game.t2);
-            if (!final68.contains(t1.name) || !final68.contains(t2.name)) continue;
+            if (!final68.contains(t1.name) && !final68.contains(t2.name)) continue;
 
             int t1D =  game.diff;
             int t2D = -game.diff;
 
             double t1Rate, t2Rate;
 
-            t1Rate = t1D;
-            t2Rate = t2D;
+            t1Rate = t1D + t2.ptDiff;
+            t2Rate = t2D + t1.ptDiff;
 
 
             t1.totRate += t1Rate;
@@ -183,7 +184,7 @@ public class NCAA2017 {
 
                 Team t1 = teamMap.get(game.t1);
                 Team t2 = teamMap.get(game.t2);
-            if (!final68.contains(t1.name) || !final68.contains(t2.name)) continue;
+                if (!final68.contains(t1.name) && !final68.contains(t2.name)) continue;
 
                 int t1D =  game.diff;
                 int t2D = -game.diff;
@@ -209,7 +210,7 @@ public class NCAA2017 {
         Collections.sort(teamList, Collections.reverseOrder());
         for (Team team : teamList) {
             System.out.print(team.name + ": ");
-            System.out.println((int)(team.avgRate+0.5));
+            System.out.println(((int)((team.avgRate)*100))/100.0);
         }
         
         System.out.println(r05);
