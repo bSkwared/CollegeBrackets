@@ -125,10 +125,19 @@ public class NCAA2017 {
             
             Team t1 = teamMap.get(game.t1);
             Team t2 = teamMap.get(game.t2);
-            if (!final68.contains(t1.name) || !final68.contains(t2.name)) continue;
+            //if (!final68.contains(t1.name) || !final68.contains(t2.name)) continue;
             
-            int t1D =  game.diff;
-            int t2D = -game.diff;
+            
+            double t1D, t2D;
+            
+            if (game.diff < 0) {
+                t1D = -Math.sqrt(-game.diff);
+                t2D =  Math.sqrt(-game.diff);
+            } else {
+                t1D =  Math.sqrt(game.diff);
+                t2D = -Math.sqrt(game.diff);
+            }
+            
             
             double t1Rate, t2Rate;
             
@@ -156,10 +165,17 @@ public class NCAA2017 {
 
             Team t1 = teamMap.get(game.t1);
             Team t2 = teamMap.get(game.t2);
-            if (!final68.contains(t1.name) && !final68.contains(t2.name)) continue;
+            //if (!final68.contains(t1.name) && !final68.contains(t2.name)) continue;
 
-            int t1D =  game.diff;
-            int t2D = -game.diff;
+            double t1D, t2D;
+            
+            if (game.diff < 0) {
+                t1D = -Math.sqrt(-game.diff);
+                t2D =  Math.sqrt(-game.diff);
+            } else {
+                t1D =  Math.sqrt(game.diff);
+                t2D = -Math.sqrt(game.diff);
+            };
 
             double t1Rate, t2Rate;
 
@@ -184,10 +200,17 @@ public class NCAA2017 {
 
                 Team t1 = teamMap.get(game.t1);
                 Team t2 = teamMap.get(game.t2);
-                if (!final68.contains(t1.name) && !final68.contains(t2.name)) continue;
+                //if (!final68.contains(t1.name) && !final68.contains(t2.name)) continue;
 
-                int t1D =  game.diff;
-                int t2D = -game.diff;
+                double t1D, t2D;
+            
+            if (game.diff < 0) {
+                t1D = -Math.sqrt(-game.diff);
+                t2D =  Math.sqrt(-game.diff);
+            } else {
+                t1D =  Math.sqrt(game.diff);
+                t2D = -Math.sqrt(game.diff);
+            }
 
                 double t1Rate, t2Rate;
 
